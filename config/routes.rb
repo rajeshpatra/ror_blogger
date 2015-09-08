@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root to: 'articles#index' # to make localhost:3000 as the index page of application.
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
 
 
