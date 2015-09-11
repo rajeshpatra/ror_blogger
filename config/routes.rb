@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
 
-  root to: 'articles#index' # to make localhost:3000 as the index page of application.
-  resources :articles do
-    resources :comments
+  # root to: 'articles#index' # to make localhost:3000 as the index page of application.
+
+  # resources :articles do
+  #   resources :comments
+  # end
+
+  Blogger::Application.routes.draw do
+
+    root to: "articles#index"
+    resources :articles do
+      resources :comments
+    end
+    resources :tags
+
   end
 
 
